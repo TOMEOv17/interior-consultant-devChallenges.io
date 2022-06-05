@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+  maximum-scale=5" />
+
+  <link rel="icon" href="devchallenges.png" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+  <title>Devchallenges</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+    }
+
+    :root {
+      --roomImgSize: 65vh;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #181719;
+    }
+
+    .lora {
+      font-family: 'Lora', serif;
+    }
+
+
+    nav {
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .main {
+      display: flex;
+      height: 90vh;
+      width: 100vw;
+      display: flex;
+      background-color: #181719;
+    }
+
+    .readMore {
+      height: 90vh;
+      width: 40vw;
+    }
+
+    .overview {
+      position: relative;
+      height: 90vh;
+      width: 60vw;
+    }
+
+    nav ul {
+      position: absolute;
+      right: 100px;
+    }
+
+    li:nth-of-type(1) {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    li:hover {
+      color: orange;
+    }
+
+    li {
+      transition: .3s;
+      cursor: pointer;
+      font-size: 1.5em;
+      margin-right: 50px;
+      display: inline;
+    }
+
+    .logo {
+      width: 160px;
+      height: 50px;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px;
+    }
+
+    .readMore {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .readMore a {
+      transition: .3s;
+    }
+
+    .readMore a:hover {
+      color: orange;
+    }
+
+    .moreBlock>* {
+      margin-top: 30px;
+    }
+
+    .moreBlock {
+      width: 25vw;
+      height: 30vh;
+      font-size: 1.7rem;
+    }
+
+    .overview img {
+      height: var(--roomImgSize);
+    }
+
+    .designerHeader img {
+      width: auto;
+      height: 90px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+    }
+
+    .designerHeader {
+      position: relative;
+      padding: 20px 0 0 120px;
+      line-height: 30px;
+      height: 100px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .designerBody p {
+      width: 450px;
+    }
+
+    .designerBody {
+      font-size: 28px;
+      width: 100%;
+    }
+
+    .designer {
+      background-color: #181719;
+      left: 30%;
+      bottom: calc(90% - var(--roomImgSize));
+      padding: 10px 0 0 30px;
+      position: absolute;
+      width: 550px;
+      height: 230px;
+    }
+
+    nav .svg {
+      display: none;
+      cursor: pointer;
+    }
+
+    div.dropDown li {
+      width: 100%;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    div.dropDown img {
+      cursor: pointer;
+    }
+
+    div.dropDown ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      height: 400px;
+    }
+
+    .pageWrap {
+      width: 100vw;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+
+      .main {
+        flex-direction: column;
+      }
+
+      .moreBlock {
+        width: 85vw;
+      }
+
+      .overview>img {
+        width: 90vw;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .overview,
+      .readMore {
+        width: 100vw;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      nav .svg {
+        display: initial;
+        position: absolute;
+        right: 5%;
+      }
+
+      .designer {
+        left: 20%;
+        bottom: calc(100% - var(--roomImgSize)/1.2);
+      }
+
+      body {
+        height: 120vh;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .designer {
+        bottom: calc(100% - var(--roomImgSize)/1.5);
+        transform: scale(.9);
+      }
+    }
+
+
+    .hidden {
+      left: 100vw;
+    }
+
+    .visible {
+      left: 0vw;
+    }
+
+    .dropDown {
+      transition: .5s;
+      z-index: 2;
+      width: 100vw;
+      display: flex;
+      height: 120vh;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(68, 61, 61);
+    }
+
+    @media (max-width: 420px) {
+      .moreBlock>p {
+        font-size: .8em;
+      }
+
+      body h1 {
+        font-size: 1em;
+      }
+
+      .designerHeader img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .designerHeader {
+        height: 50%;
+        padding: 10px 0 0 100px;
+      }
+
+      .designerBody {
+        font-size: 1em;
+      }
+
+      .designer {
+        padding: 5px 0 0 20px;
+        height: 150px;
+        width: 300px;
+      }
+
+      .hidden {
+        left: 100vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pageWrap">
+    <div class="dropDown hidden disNone">
+      <img onClick="togglePanel()" src="x-white.svg">
+      <ul>
+        <li>Home</li>
+        <li>Collection</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <nav>
+
+      <div class="logo">
+        <p class="lora">THIS INTERIOR</p>
+      </div>
+
+      <ul>
+        <li>Home</li>
+        <li>Collection</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+      <img onClick="togglePanel()" class="svg" src="icons8-menu.svg">
+
+    </nav>
+
+    <div class="main">
+
+      <div class="readMore">
+        <div class="moreBlock">
+          <h1 class="lora">Modern interior</h1>
+          <p>
+            A full-service residential & commercial interior design and staging company offering professional organising
+            &
+            eco-services.
+          </p>
+          <br>
+          <a href="#">Read more →</a>
+        </div>
+      </div>
+
+      <div class="overview">
+        <img src="photo1.png">
+        <div class="designer">
+          <div class="designerHeader">
+            <img src="photo2.png">
+            <p><b>Aliza Webber</b><br>
+              Interior designer</p>
+          </div>
+          <div class="designerBody">
+            <b>
+              <p>
+                Designed in 2010 by Aliza Webber
+              </p>
+            </b>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- <p class="footer">created by <b><u>TOMEOv17</u></b> - devChallenges.io</p> -->
+
+  <script>
+    const togglePanel = () => {
+      document.querySelector('.dropDown').classList.toggle('hidden')
+      document.querySelector('.dropDown').classList.toggle('visible')
+    }
+  </script>
+
+</body>
+
+</html>
